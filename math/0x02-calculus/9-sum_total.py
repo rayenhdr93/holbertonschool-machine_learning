@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
+""" why its not workin"""
+
+
 def summation_i_squared(n):
+    """just why ???"""
+
     if type(n) is not int:
         return None
     if n == 1:
