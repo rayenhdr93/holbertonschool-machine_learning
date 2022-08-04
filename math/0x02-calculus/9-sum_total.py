@@ -5,7 +5,7 @@
 def summation_i_squared(n):
     """just why ???"""
 
-    if type(n) is not int:
+    if (type(n) is not int) or (n < 1):
         return None
     if n == 1:
         return n
