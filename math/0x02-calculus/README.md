@@ -1,1 +1,1 @@
-0x02. Calculus
+0x02 Calculus
