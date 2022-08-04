@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-'''pep8'''
-
-
 def summation_i_squared(n):
-    '''pep8'''
     if type(n) is not int:
         return None
     if n == 1:
