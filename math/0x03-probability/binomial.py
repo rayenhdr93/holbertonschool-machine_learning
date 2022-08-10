@@ -2,6 +2,9 @@
 ''' Binomial calc '''
 
 
+from distutils.fancy_getopt import fancy_getopt
+
+
 class Binomial:
     ''' Binomial calc '''
 
@@ -33,3 +36,21 @@ class Binomial:
             p = mean / n
             self.n = int(n)
             self.p = float(p)
+
+    def pmf(self, k):
+        ''' Binomial PMF '''
+        if type(k) is not int:
+            int(k)
+        if k < 0:
+            return(0)
+        facn = 1
+        fack = 1
+        facnk = 1
+        for x in range(self.n, 0, -1):
+            facn = facn * x
+        for x in range(k, 0, -1):
+            fack = fack * x
+        for x in range(self.n - k, 0, -1):
+            facnk = facnk * x
+        x = facn / (fack * facnk)
+        return (x * (self.p ** k) * ((1 - self.p) ** (self.n - k)))
