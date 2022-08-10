@@ -33,4 +33,3 @@ class Poisson:
             fac = fac * i
         pmf = 1
         return(pmf)
-
