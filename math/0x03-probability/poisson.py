@@ -6,7 +6,7 @@ class Poisson:
     ''' poisson '''
 
     def __init__(self, data=None, lambtha=1.):
-        '''doc'''
+        '''pep 8'''
         if data is None:
             if lambtha <= 0:
                 raise ValueError("lambtha must be a positive value")
@@ -22,7 +22,6 @@ class Poisson:
             self.lambtha = totdata / len(data)
 
     def pmf(self, k):
-        '''doc'''
         e = 2.7182818285
         if type(k) is not int:
             k = int(k)
@@ -31,5 +30,16 @@ class Poisson:
         fac = 1
         for i in range(k, 0, -1):
             fac = fac * i
-        pmf = 1
+        pmf = (e ** (-self.lambtha) * self.lambtha ** k) / fac
         return(pmf)
+
+    def cdf(self, k):
+        e = 2.7182818285
+        if type(k) is not int:
+            k = int(k)
+        if k < 0:
+            return(0)
+        cdf = 0
+        for i in range(0, k + 1):
+            cdf = cdf + self.pmf(i)
+        return(cdf)
