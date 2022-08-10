@@ -51,3 +51,14 @@ class Binomial:
             facnk = facnk * x
         x = facn / (fack * facnk)
         return (x * (self.p ** k) * ((1 - self.p) ** (self.n - k)))
+
+    def cdf(self, k):
+        ''' Binomial CDF '''
+        if type(k) is not int:
+            int(k)
+        if k < 0:
+            return(0)
+        cdf = 0
+        for i in range(0, k + 1):
+            cdf = cdf + self.pmf(i)
+        return(cdf)
