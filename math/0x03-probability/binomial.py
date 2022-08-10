@@ -37,7 +37,7 @@ class Binomial:
     def pmf(self, k):
         ''' Binomial PMF '''
         if type(k) is not int:
-            int(k)
+            k = int(k)
         if k < 0:
             return(0)
         facn = 1
@@ -55,7 +55,7 @@ class Binomial:
     def cdf(self, k):
         ''' Binomial CDF '''
         if type(k) is not int:
-            int(k)
+            k = int(k)
         if k < 0:
             return(0)
         cdf = 0
