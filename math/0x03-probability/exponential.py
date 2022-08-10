@@ -19,4 +19,4 @@ class Exponential:
             totdata = 0
             for x in data:
                 totdata = totdata + x
-            self.lambtha = totdata / len(data)
+            self.lambtha = 1 / (totdata / len(data))
