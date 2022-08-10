@@ -20,3 +20,11 @@ class Exponential:
             for x in data:
                 totdata = totdata + x
             self.lambtha = 1 / (totdata / len(data))
+
+    def pdf(self, x):
+        ''' Exponential PDF '''
+        e = 2.7182818285
+        if x < 0:
+            return 0
+        pdf = self.lambtha * e ** (- self.lambtha * x)
+        return(pdf)
