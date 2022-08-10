@@ -26,3 +26,11 @@ class Normal:
                 stdsquare = stdsquare + ((x - self.mean) ** 2)
             stdsquare = stdsquare / len(data)
             self.stddev = stdsquare ** 0.5
+
+    def z_score(self, x):
+        ''' Normalize Normal '''
+        return ((x - self.mean) / self.stddev)
+
+    def x_value(self, z):
+        ''' Normalize Normal '''
+        return ((z * self.stddev) + self.mean)
