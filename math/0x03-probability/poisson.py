@@ -40,6 +40,6 @@ class Poisson:
         if k < 0:
             return(0)
         cdf = 0
-        for i in range(0, k + 1):
-            cdf = cdf + self.pmf(i)
+        for j in range(0, k + 1):
+            cdf = cdf + self.pmf(j)
         return(cdf)
