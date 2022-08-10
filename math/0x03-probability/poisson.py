@@ -31,3 +31,14 @@ class Poisson:
             fac = fac * i
         pmf = (e ** (-self.lambtha) * self.lambtha ** k) / fac
         return(pmf)
+
+    def cdf(self, k):
+        e = 2.7182818285
+        if type(k) is not int:
+            k = int(k)
+        if k < 0:
+            return(0)
+        cdf = 0
+        for i in range(0, k + 1):
+            cdf = cdf + self.pmf(i)
+        return(cdf)
