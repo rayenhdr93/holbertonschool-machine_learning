@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-'''pep 8'''
+''' poisson calc '''
 
 
 class Poisson:
-    ''' poisson '''
+    ''' poisson calc'''
 
     def __init__(self, data=None, lambtha=1.):
-        '''pep 8'''
+        ''' Initialize Poisson '''
         if data is None:
             if lambtha <= 0:
                 raise ValueError("lambtha must be a positive value")
@@ -22,6 +22,7 @@ class Poisson:
             self.lambtha = totdata / len(data)
 
     def pmf(self, k):
+        ''' Poisson PMF '''
         e = 2.7182818285
         if type(k) is not int:
             k = int(k)
@@ -34,6 +35,7 @@ class Poisson:
         return(pmf)
 
     def cdf(self, k):
+        ''' Poisson CDF '''
         e = 2.7182818285
         if type(k) is not int:
             k = int(k)
