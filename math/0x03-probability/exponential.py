@@ -25,6 +25,15 @@ class Exponential:
         ''' Exponential PDF '''
         e = 2.7182818285
         if x < 0:
-            return 0
+            return(0)
         pdf = self.lambtha * e ** (- self.lambtha * x)
         return(pdf)
+
+    def cdf(self, x):
+        ''' Exponential CDF '''
+        e = 2.7182818285
+        if x < 0:
+            return(0)
+        cdf = 1 - e ** (- self.lambtha * x)
+        return(cdf)
+        
