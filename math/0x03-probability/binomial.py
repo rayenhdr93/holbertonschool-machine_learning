@@ -2,9 +2,6 @@
 ''' Binomial calc '''
 
 
-from distutils.fancy_getopt import fancy_getopt
-
-
 class Binomial:
     ''' Binomial calc '''
 
