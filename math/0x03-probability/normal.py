@@ -41,3 +41,12 @@ class Normal:
         e = 2.7182818285
         p = (-0.5*((x - self.mean)/self.stddev)**2)
         return ((1 / (self.stddev * ((2*π)**0.5))) * (e**p))
+
+    def cdf(self, x):
+        ''' Normalize Normal '''
+        π = 3.1415926536
+        e = 2.7182818285
+        x = (x - self.mean) / (self.stddev * (2 ** 0.5))
+        er = (2/(π**0.5))*(x-((x**3)/3)+((x**5)/10)-((x**7)/42)+((x**9)/216))
+        cdf = 0.5 * (1 + er)
+        return(cdf)
