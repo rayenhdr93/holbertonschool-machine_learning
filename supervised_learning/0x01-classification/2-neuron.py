@@ -29,6 +29,7 @@ class Neuron:
         return self.__A
 
     def forward_prop(self, X):
+        '''Neuron is here'''
         product = np.matmul(self.W, X)
         x = product + self.__b
         self.__A = 1.0/(1.0 + np.exp(-x))
