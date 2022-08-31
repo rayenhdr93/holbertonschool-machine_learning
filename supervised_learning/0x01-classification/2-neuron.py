@@ -28,11 +28,8 @@ class Neuron:
     def A(self):
         return self.__A
 
-    def sigmoid(self, x):
-        return 1.0/(1.0 + np.exp(-x))
-
     def forward_prop(self, X):
         product = np.matmul(self.W, X)
         x = product + self.__b
-        self.__A = self.sigmoid(x)
+        self.__A = 1.0/(1.0 + np.exp(-x))
         return(self.__A)
