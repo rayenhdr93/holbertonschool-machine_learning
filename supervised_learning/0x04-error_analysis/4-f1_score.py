@@ -6,6 +6,7 @@ import numpy as np
 
 
 def f1_score(confusion):
+    ''' Error Analysis '''
     tp = np.diagonal(confusion)
     fn = np.sum(confusion, axis=1) - tp
     fp = np.sum(confusion, axis=0) - tp

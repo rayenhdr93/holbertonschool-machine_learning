@@ -6,6 +6,7 @@ import numpy as np
 
 
 def specificity(confusion):
+    ''' Error Analysis '''
     tp = np.diagonal(confusion)
     tpfn = np.sum(confusion, axis=1)
     fp = np.sum(confusion, axis=0) - tp
