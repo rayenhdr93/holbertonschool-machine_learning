@@ -3,11 +3,12 @@
 
 
 import numpy as np
+sensitivity = __import__('1-sensitivity').sensitivity
+precision = __import__('2-precision').precision
 
 
 def f1_score(confusion):
     ''' Error Analysis '''
-    tp = np.diagonal(confusion)
-    fn = np.sum(confusion, axis=1) - tp
-    fp = np.sum(confusion, axis=0) - tp
-    return (tp/(tp + 0.5 * (fp + fn)))
+    r = sensitivity(confusion)
+    p = precision(confusion)
+    return (2 * ((p * r) / (p + r)))
