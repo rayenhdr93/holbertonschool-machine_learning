@@ -2,8 +2,8 @@
 ''' Error Analysis is here'''
 
 
-import numpy
+import numpy as np
 
 
 def create_confusion_matrix(labels, logits):
-    return (numpy.matmul(labels.T, logits))
+    return (np.matmul(labels.T, logits))

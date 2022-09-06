@@ -2,11 +2,11 @@
 ''' Error Analysis '''
 
 
-import numpy
+import numpy as np
 
 
 def f1_score(confusion):
-    tp = numpy.diagonal(confusion)
-    fn = numpy.sum(confusion, axis=1) - tp
-    fp = numpy.sum(confusion, axis=0) - tp
+    tp = np.diagonal(confusion)
+    fn = np.sum(confusion, axis=1) - tp
+    fp = np.sum(confusion, axis=0) - tp
     return (tp/(tp + 0.5 * (fp + fn)))

@@ -2,10 +2,10 @@
 ''' Error Analysis '''
 
 
-import numpy
+import numpy as np
 
 
 def precision(confusion):
-    tp = numpy.diagonal(confusion)
-    tpfp = numpy.sum(confusion, axis=0)
+    tp = np.diagonal(confusion)
+    tpfp = np.sum(confusion, axis=0)
     return (tp / tpfp)

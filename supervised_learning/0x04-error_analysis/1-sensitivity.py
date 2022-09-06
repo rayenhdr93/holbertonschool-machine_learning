@@ -2,10 +2,10 @@
 ''' Error Analysis '''
 
 
-import numpy
+import numpy as np
 
 
 def sensitivity(confusion):
-    tp = numpy.diagonal(confusion)
-    tpfn = numpy.sum(confusion, axis=1)
+    tp = np.diagonal(confusion)
+    tpfn = np.sum(confusion, axis=1)
     return (tp / tpfn)
